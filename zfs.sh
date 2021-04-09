@@ -19,5 +19,5 @@ zfs destroy -rv double-pool-8TB@send
 -nv # to dry-run any operation
 zfs list -t all # lists all filesystems, including snapshots
 zfs get all double-pool-1TB # show all attributes of the filesystem
-diff -qr /mnt/double-pool-8TB/ /mnt/double-pool-1TB/ # compares all files in directories, to find if anything is missing (very slow)
+diff -qr /mnt/double-pool-8TB/ /mnt/double-pool-1TB/ > ./diff.tmp # compares all files in directories, to find if anything is missing (very slow)
 
