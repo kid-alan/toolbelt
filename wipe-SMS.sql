@@ -1,0 +1,14 @@
+delete billing.tqueue;
+delete super.tqueue;
+delete super.tqueuehistory;
+delete super.tinfocas;
+delete super.tinfocashistory;
+delete super.trecall;
+delete super.blocked_hardware;
+delete super.tsubscription;
+delete super.tsubscriptionhistory;
+delete super.tpreview;
+delete super.tpreviewhistory;
+delete super.enum_paycard;
+delete super.enum_device;
+commit;

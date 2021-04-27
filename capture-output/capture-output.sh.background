@@ -1,0 +1,3 @@
+#!/bin/bash
+
+nohup /var/log/epg/capture-output/capture-output.sh &>/dev/null &

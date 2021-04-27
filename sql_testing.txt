@@ -1,0 +1,33 @@
+select count(*) from vcas2 where stopsec-startsec=1 or stopsec=0; --Рассылается команд удаления сейчас
+select count(*) from vcas2 where stopsec-startsec<>1 and stopsec<>0; --Рассылается подписок сейчас
+select count(*) from tsubscription where subscriptionclass_id<0; --Подписок на удаление
+select count(*) from tsubscription where subscriptionclass_id>0; --Подписок на добавление
+select count(*) from tsubscription; --Подписок всего
+
+select * from enum_device where device_id=;
+select * from tsubscription where device_id=20405f9;
+desc tsubscription;
+desc enum_device;
+
+select count(*) from vcas2;
+select * from vcas2;
+
+
+
+select ed.device_id, ts.* from super.tsubscription ts
+inner join super.enum_device ed on ed.device_id = ts.device_id
+where ed.hardware_id = 382516150288
+
+
+
+delete enum_device;
+delete blocked_hardware;
+delete error_audit;
+delete taudit;
+delete tqueue;
+delete tqueuehistory;
+delete tsubscription;
+delete trecall;
+
+
+ALTER SESSION SET TIME_ZONE = '-3:0'; -- Moscow summer 
