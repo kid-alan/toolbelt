@@ -5,11 +5,12 @@
 
 SRC_PATH=$1
 BACKUP_NAME=$2
-DEST_PATH=root@10.128.64.116:/rsync/"$BACKUP_NAME"_$(date +"%d-%m-%Y_%H-%M")/
+FULL_BACKUP_NAME="$BACKUP_NAME"_$(date +"%d-%m-%Y_%H-%M")
+DEST_PATH=/run/user/1000/gvfs/smb-share:server=10.243.56.175,share=manual-backups/anka/$FULL_BACKUP_NAME/
 
-echo "Backuping $SRC_PATH"
+echo "Backing up $SRC_PATH"
 echo "Backup label is \"$BACKUP_NAME\""
-echo "Backuping to $DEST_PATH"
+echo "Backing up to $DEST_PATH"
 
 ## Exclude file
 echo -e "
@@ -21,6 +22,7 @@ echo -e "
 - /proc/*
 - /sys/*
 - /tmp/*
+- /home/ania/Downloads/*
 " > /tmp/exclude
 ## End of Exclude file
 
